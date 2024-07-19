@@ -10,7 +10,7 @@ public class Even {
     public static void start() {
         Cli.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int count = 0; count < 4; count++) {
+        for (int count = 0; count < 3; count++) {
             System.out.println("Question: " + getRandomNumber());
             Scanner yesOrNo = new Scanner(System.in);
             String yesNo = yesOrNo.nextLine();
