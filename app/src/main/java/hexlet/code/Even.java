@@ -1,0 +1,42 @@
+package hexlet.code;
+
+import java.util.Scanner;
+
+import static hexlet.code.Cli.userName;
+
+public class Even {
+
+
+    public static void start() {
+        Cli.greetings();
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        for (int count = 0; count < 4; count++) {
+            System.out.println("Question: " + getRandomNumber());
+            Scanner yesOrNo = new Scanner(System.in);
+            String yesNo = yesOrNo.nextLine();
+            if (isEven(getRandomNumber()) && yesNo.equals("yes")) {
+                System.out.println("Correct!");
+            } else if (!isEven(getRandomNumber()) && yesNo.equals("no")) {
+                System.out.println("Correct!");
+            } else if (isEven(getRandomNumber()) && yesNo.equals("no")) {
+                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+                System.exit(0);
+            } else if (!isEven(getRandomNumber()) && yesNo.equals("yes")) {
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+                System.exit(0);
+            }
+        }
+        System.out.println("Congratulations, " + userName);
+        System.exit(0);
+    }
+
+
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
+    }
+
+    public static int getRandomNumber() {
+        return (int) (Math.random() * 99) + 1;
+    }
+}
+
