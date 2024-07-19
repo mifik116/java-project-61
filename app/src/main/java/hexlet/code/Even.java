@@ -6,11 +6,11 @@ import static hexlet.code.Cli.userName;
 
 public class Even {
 
-
+    private static final int numsQuestions = 3;
     public static void start() {
         Cli.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int count = 0; count < 3; count++) {
+        for (int count = 0; count < numsQuestions; count++) {
             System.out.println("Question: " + getRandomNumber());
             Scanner yesOrNo = new Scanner(System.in);
             String yesNo = yesOrNo.nextLine();
@@ -37,7 +37,7 @@ public class Even {
     }
 
     public static int getRandomNumber() {
-        return (int) (Math.random() * 99) + 1;
+        return (int) (Math.random() * 11);
     }
 }
 
