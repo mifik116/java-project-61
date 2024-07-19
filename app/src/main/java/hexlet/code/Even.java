@@ -11,19 +11,20 @@ public class Even {
         Cli.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int count = 0; count < numsQuestions; count++) {
-            System.out.println("Question: " + getRandomNumber());
+            int x = getRandomNumber();
+            System.out.println("Question: " + x);
             Scanner yesOrNo = new Scanner(System.in);
             String yesNo = yesOrNo.nextLine();
             if (!yesNo.equals("no") && !yesNo.equals("yes"))
                 System.exit(0);
-            if (isEven(getRandomNumber()) && yesNo.equals("yes")) {
+            if (isEven(x) && yesNo.equals("yes")) {
                 System.out.println("Correct!");
-            } else if (!isEven(getRandomNumber()) && yesNo.equals("no")) {
+            } else if (!isEven(x) && yesNo.equals("no")) {
                 System.out.println("Correct!");
-            } else if (isEven(getRandomNumber()) && yesNo.equals("no")) {
+            } else if (isEven(x) && yesNo.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
                 System.exit(0);
-            } else if (!isEven(getRandomNumber()) && yesNo.equals("yes")) {
+            } else if (!isEven(x) && yesNo.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 System.exit(0);
             }
