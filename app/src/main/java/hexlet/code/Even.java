@@ -14,9 +14,8 @@ public class Even {
             System.out.println("Question: " + getRandomNumber());
             Scanner yesOrNo = new Scanner(System.in);
             String yesNo = yesOrNo.nextLine();
-            if (!yesNo.equals("no") && !yesNo.equals("yes")){
+            if (!yesNo.equals("no") && !yesNo.equals("yes"))
                 System.exit(0);
-            }
             if (isEven(getRandomNumber()) && yesNo.equals("yes")) {
                 System.out.println("Correct!");
             } else if (!isEven(getRandomNumber()) && yesNo.equals("no")) {
@@ -37,7 +36,7 @@ public class Even {
     }
 
     public static int getRandomNumber() {
-        return (int) (Math.random() * 11);
+        return (int) (Math.random() * 11) + 1;
     }
 }
 
