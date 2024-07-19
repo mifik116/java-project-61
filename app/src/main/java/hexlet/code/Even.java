@@ -17,20 +17,23 @@ public class Even {
             if (!yesNo.equals("no") && !yesNo.equals("yes")){
                 System.exit(0);
             }
-            if (getRandomNumber() % 2 ==0 && yesNo.equals("yes")) {
+            if (isEven(getRandomNumber()) && yesNo.equals("yes")) {
                 System.out.println("Correct!");
-            } else if (getRandomNumber() % 2 !=0 && yesNo.equals("no")) {
+            } else if (!isEven(getRandomNumber()) && yesNo.equals("no")) {
                 System.out.println("Correct!");
-            } else if (getRandomNumber() % 2 == 0 && yesNo.equals("no")) {
+            } else if (isEven(getRandomNumber()) && yesNo.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
                 System.exit(0);
-            } else if (getRandomNumber() % 2 !=0 && yesNo.equals("yes")) {
+            } else if (!isEven(getRandomNumber()) && yesNo.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 System.exit(0);
             }
         }
         System.out.println("Congratulations, " + userName);
         System.exit(0);
+    }
+    public static boolean isEven(int number){
+        return number % 2 == 0;
     }
 
     public static int getRandomNumber() {
