@@ -14,25 +14,20 @@ public class Even {
             System.out.println("Question: " + getRandomNumber());
             Scanner yesOrNo = new Scanner(System.in);
             String yesNo = yesOrNo.nextLine();
-            if (isEven(getRandomNumber()) && yesNo.equals("yes")) {
+            if (getRandomNumber() % 2 ==0 && yesNo.equals("yes")) {
                 System.out.println("Correct!");
-            } else if (!isEven(getRandomNumber()) && yesNo.equals("no")) {
+            } else if (getRandomNumber() % 2 !=0 && yesNo.equals("no")) {
                 System.out.println("Correct!");
-            } else if (isEven(getRandomNumber()) && yesNo.equals("no")) {
+            } else if (getRandomNumber() % 2 == 0 && yesNo.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
                 System.exit(0);
-            } else if (!isEven(getRandomNumber()) && yesNo.equals("yes")) {
+            } else if (getRandomNumber() % 2 !=0 && yesNo.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 System.exit(0);
             }
         }
         System.out.println("Congratulations, " + userName);
         System.exit(0);
-    }
-
-
-    public static boolean isEven(int num) {
-        return num % 2 == 0;
     }
 
     public static int getRandomNumber() {
