@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import static hexlet.code.Engine.getRandomNumber;
 
 public class Even {

@@ -14,7 +14,6 @@ public class Engine {
             System.out.println("Question: " + question[i]);
             System.out.println("Your answer: ");
             String yesOrNo = scanner.nextLine();
-            checkCorrectWritting(yesOrNo);
             if (correctAnswer[i].equals(yesOrNo)) {
                 System.out.println("Correct!");
             } else {
@@ -25,7 +24,7 @@ public class Engine {
         System.out.println("Congratulations, " + userName);
         System.exit(0);
     }
-    private static void checkCorrectWritting(String yesNo){
+    private static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность, однако ломает другие игры
         if (!yesNo.equals("no") && !yesNo.equals("yes"))
             System.exit(0);
     }
