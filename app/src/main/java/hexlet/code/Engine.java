@@ -29,7 +29,7 @@ public class Engine {
             System.exit(0);
     }
     public static int getRandomNumber() {
-        return (int) (Math.random() * 11) + 1;
+        return (int) (Math.random() * 10) + 1;
     }
 }
 
