@@ -24,12 +24,11 @@ public class Engine {
         System.out.println("Congratulations, " + userName);
         System.exit(0);
     }
-    private static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность, однако ломает другие игры
+    /* public static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность и простое число, однако ломает другие игры
         if (!yesNo.equals("no") && !yesNo.equals("yes"))
             System.exit(0);
-    }
+    } */
     public static int getRandomNumber() {
         return (int) (Math.random() * 10) + 1;
     }
 }
-

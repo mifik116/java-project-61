@@ -17,7 +17,7 @@ public class Progression {
             Random random = new Random();
             int firstNum = getRandomNumber();
             int summand = getRandomNumber();
-            String[] arrayNums = NumbsArray(firstNum, summand, arrayLength);
+            String[] arrayNums = NumbsArray(firstNum, summand);
             int randomIndexOfArray = random.nextInt(arrayNums.length);
             String findNum = arrayNums[randomIndexOfArray];
             arrayNums[randomIndexOfArray] = "..";
@@ -26,10 +26,10 @@ public class Progression {
         }
         Engine.engineGame(gameQuestion, correctAnswers, question);
     }
-    private static String[] NumbsArray(int startArray, int summandArray, int numbsArrayLength){
-        int[] numbers = new int[numbsArrayLength];
+    private static String[] NumbsArray(int startArray, int summandArray){
+        int[] numbers = new int[Progression.arrayLength];
         numbers[0] = startArray;
-        for (int i = 1; i < numbsArrayLength; i++){
+        for (int i = 1; i < Progression.arrayLength; i++){
             numbers[i] = numbers[i - 1] + summandArray;
         }
         String[] finalArrayOfNumbers = new String[numbers.length];
