@@ -5,7 +5,7 @@ import static hexlet.code.Cli.getUserName;
 
 public class Engine {
     public static final int NUMBERS_OF_QUESTIONS = 3;
-    static final int defaultNumberRange = 10;
+    static final int DEFAULT_NUMBER_RANGE = 10;
     public static void engineGame(String gameQuestion, String[] correctAnswer, String[] question) {
         Scanner scanner = new Scanner(System.in);
         Cli.greetings();
@@ -29,6 +29,6 @@ public class Engine {
             System.exit(0);
     } */
     public static int getRandomNumber() {
-        return (int) (Math.random() * defaultNumberRange) + 1;
+        return (int) (Math.random() * DEFAULT_NUMBER_RANGE) + 1;
     }
 }

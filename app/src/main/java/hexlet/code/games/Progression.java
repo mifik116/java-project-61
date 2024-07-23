@@ -7,7 +7,7 @@ import java.util.Random;
 import static hexlet.code.Engine.getRandomNumber;
 
 public class Progression {
-    private static final int defaultArrayLength = 10;
+    private static final int DEFAULT_ARRAY_LENGTH = 10;
     public static void start() {
         String gameQuestion = "Find the greatest common divisor of given numbers.";
         String[] correctAnswers = new String[Engine.NUMBERS_OF_QUESTIONS];
@@ -17,7 +17,7 @@ public class Progression {
             Random random = new Random();
             int firstNum = getRandomNumber();
             int summand = getRandomNumber();
-            String[] arrayNums = NumbsArray(firstNum, summand);
+            String[] arrayNums = numbsArray(firstNum, summand);
             int randomIndexOfArray = random.nextInt(arrayNums.length);
             String findNum = arrayNums[randomIndexOfArray];
             arrayNums[randomIndexOfArray] = "..";
@@ -26,10 +26,10 @@ public class Progression {
         }
         Engine.engineGame(gameQuestion, correctAnswers, question);
     }
-    private static String[] NumbsArray(int startArray, int summandArray) {
-        int[] numbers = new int[Progression.defaultArrayLength];
+    private static String[] numbsArray(int startArray, int summandArray) {
+        int[] numbers = new int[Progression.DEFAULT_ARRAY_LENGTH];
         numbers[0] = startArray;
-        for (int i = 1; i < Progression.defaultArrayLength; i++) {
+        for (int i = 1; i < Progression.DEFAULT_ARRAY_LENGTH; i++) {
             numbers[i] = numbers[i - 1] + summandArray;
         }
         String[] finalArrayOfNumbers = new String[numbers.length];
