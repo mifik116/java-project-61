@@ -37,6 +37,9 @@ public class App {
                 Progression.start();
             case (6):
                 Prime.start();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + choice);
         }
     }
 }

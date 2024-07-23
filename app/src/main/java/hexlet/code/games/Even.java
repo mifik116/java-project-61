@@ -9,7 +9,7 @@ public class Even {
         String gameQuestion = "Answer 'yes' if the number is even otherwise answer 'no'.";
         String[] correctAnswer = new String[Engine.NUMBERS_OF_QUESTIONS];
         String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
-        for (int i =0; i<Engine.NUMBERS_OF_QUESTIONS;i++) {
+        for (int i = 0; i < Engine.NUMBERS_OF_QUESTIONS; i++) {
             int randomNum = getRandomNumber();
             question[i] = String.valueOf(randomNum);
             correctAnswer[i] = isEven(randomNum) ? "yes" : "no";

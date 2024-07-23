@@ -1,11 +1,11 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import static hexlet.code.Cli.userName;
+import static hexlet.code.Cli.getUserName;
 
 public class Engine {
     public static final int NUMBERS_OF_QUESTIONS = 3;
-
+    static final int defaultNumberRange = 10;
     public static void engineGame(String gameQuestion, String[] correctAnswer, String[] question) {
         Scanner scanner = new Scanner(System.in);
         Cli.greetings();
@@ -17,18 +17,18 @@ public class Engine {
             if (correctAnswer[i].equals(yesOrNo)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + yesOrNo + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer[i] + "'.");
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", yesOrNo, correctAnswer[i]);
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + userName);
+        System.out.println("Congratulations, " + getUserName());
         System.exit(0);
     }
-    /* public static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность и простое число, однако ломает другие игры
-        if (!yesNo.equals("no") && !yesNo.equals("yes"))
+    /* public static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность и простое число,
+        if (!yesNo.equals("no") && !yesNo.equals("yes"))       //однако ломает другие игры
             System.exit(0);
     } */
     public static int getRandomNumber() {
-        return (int) (Math.random() * 10) + 1;
+        return (int) (Math.random() * defaultNumberRange) + 1;
     }
 }
