@@ -5,4 +5,5 @@
 
 <a href="https://codeclimate.com/github/mifik116/java-project-61/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0879c419e8ce8aae62b6/test_coverage" /></a>
 
+Запись работы игры
 https://asciinema.org/a/HN3FFYpXln1doRfNg02P1BXqR 
