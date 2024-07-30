@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Arrays;
 import java.util.Random;
 import static hexlet.code.Engine.getRandomNumber;
 
@@ -21,7 +20,7 @@ public class Progression {
             int randomIndexOfArray = random.nextInt(arrayNums.length);
             String findNum = arrayNums[randomIndexOfArray];
             arrayNums[randomIndexOfArray] = "..";
-            question[i] = Arrays.toString(arrayNums);
+            question[i] = String.join(" ", arrayNums);
             correctAnswers[i] = findNum;
         }
         Engine.engineGame(gameQuestion, correctAnswers, question);
