@@ -21,7 +21,7 @@ public class Engine {
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + getUserName());
+        System.out.println("Congratulations, " + getUserName() + "!");
         System.exit(0);
     }
     /* public static void checkCorrectWritting(String yesNo){ //нужен только для игры в четность и простое число,
