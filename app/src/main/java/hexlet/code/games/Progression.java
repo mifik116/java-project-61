@@ -8,7 +8,7 @@ import static hexlet.code.Engine.getRandomNumber;
 public class Progression {
     private static final int DEFAULT_ARRAY_LENGTH = 10;
     public static void start() {
-        String gameQuestion = "Find the greatest common divisor of given numbers.";
+        String gameQuestion = "What number is missing in the progression?";
         String[] correctAnswers = new String[Engine.NUMBERS_OF_QUESTIONS];
         String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
 
