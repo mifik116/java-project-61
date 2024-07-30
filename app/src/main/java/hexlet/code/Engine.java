@@ -18,7 +18,7 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", yesOrNo, correctAnswer[i]);
-                System.out.println("Let's try again," + getUserName() + "!");
+                System.out.println("Let's try again, " + getUserName() + "!");
                 System.exit(0);
             }
         }
