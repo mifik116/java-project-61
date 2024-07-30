@@ -23,9 +23,9 @@ public class Calc {
         Engine.engineGame(gameQuestion, correctAnswers, question);
     }
     private static int resultOfExpression(int firstNumber, int secondNumber, String expression) {
-        if (expression.equals("*")) {
+        if (expression.equals(" * ")) {
             return firstNumber * secondNumber;
-        } else if (expression.equals("+")) {
+        } else if (expression.equals(" + ")) {
             return firstNumber + secondNumber;
         } else {
             return firstNumber - secondNumber;
