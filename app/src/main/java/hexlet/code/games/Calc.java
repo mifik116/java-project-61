@@ -8,7 +8,7 @@ public class Calc {
 
     public static void start() {
         String gameQuestion = "What is the result of the expression?";
-        String[] typoOfExpression = {"*", "+", "-"};
+        String[] typoOfExpression = {" * ", " + ", " - "};
         String[] correctAnswers = new String[Engine.NUMBERS_OF_QUESTIONS];
         String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
         Random randomExpression = new Random();
