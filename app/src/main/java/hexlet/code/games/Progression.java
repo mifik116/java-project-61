@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
 import static hexlet.code.Utils.getRandomNumber;
 
@@ -26,7 +25,7 @@ public class Progression {
         Engine.engineGame(questionsAnswers, gameQuestion);
     }
     private static String[] numbsArray(int startArray, int summandArray) {
-    String[] numbers = new String[Progression.DEFAULT_ARRAY_LENGTH];
+        String[] numbers = new String[Progression.DEFAULT_ARRAY_LENGTH];
         numbers[0] = String.valueOf(startArray);
         for (int i = 0; i < Progression.DEFAULT_ARRAY_LENGTH; i++) {
             numbers[i] = String.valueOf(startArray + summandArray * i);
