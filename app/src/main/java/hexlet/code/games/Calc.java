@@ -24,9 +24,10 @@ public class Calc {
 
     private static int resultOfExpression(int firstNumber, int secondNumber, String expression) {
         return switch (expression) {
-            case "*" -> firstNumber * secondNumber;
-            case "-" -> firstNumber - secondNumber;
-            default -> firstNumber + secondNumber;
+            case " * " -> firstNumber * secondNumber;
+            case " - " -> firstNumber - secondNumber;
+            case " + " -> firstNumber + secondNumber;
+            default -> throw new IllegalStateException("Unexpected value: " + expression);
         };
     }
 }
