@@ -11,7 +11,7 @@ public class Calc {
         String[] typoOfExpression = {" * ", " + ", " - "};
         String[][] questionsAnswers = new String[Engine.NUMBERS_OF_QUESTIONS][OPTIONS];
         for (int i = 0; i < Engine.NUMBERS_OF_QUESTIONS; i++) {
-            String expression = typoOfExpression[getRandomNumber((typoOfExpression.length) -1)];
+            String expression = typoOfExpression[getRandomNumber((typoOfExpression.length) - 1)];
             int firstNum = getRandomNumber(RANDOM_NUMBER_RANGE);
             int secondNum = getRandomNumber(RANDOM_NUMBER_RANGE);
             int correctAnswer = resultOfExpression(firstNum, secondNum, expression);
