@@ -26,8 +26,7 @@ public class Calc {
         return switch (expression) {
             case "*" -> firstNumber * secondNumber;
             case "-" -> firstNumber - secondNumber;
-            case "+" -> firstNumber + secondNumber;
-            default -> throw new IllegalStateException("Unexpected value: " + expression);
+            default -> firstNumber + secondNumber;
         };
     }
 }
