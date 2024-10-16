@@ -4,17 +4,17 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class Even {
-
+    public static final int OPTIONS = 2;
+    public static final int RANDOM_NUMBER_RANGE = 10;
     public static void start() {
         String gameQuestion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] correctAnswer = new String[Engine.NUMBERS_OF_QUESTIONS];
-        String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
+        String[][] questionsAnswers = new String[Engine.NUMBERS_OF_QUESTIONS][OPTIONS];
         for (int i = 0; i < Engine.NUMBERS_OF_QUESTIONS; i++) {
-            int randomNum = getRandomNumber();
-            question[i] = String.valueOf(randomNum);
-            correctAnswer[i] = isEven(randomNum) ? "yes" : "no";
+            int randomNum = getRandomNumber(RANDOM_NUMBER_RANGE);
+            questionsAnswers[i][0] = String.valueOf(randomNum);
+            questionsAnswers[i][1] = isEven(randomNum) ? "yes" : "no";
         }
-        Engine.engineGame(gameQuestion, correctAnswer, question);
+        Engine.engineGame(questionsAnswers, gameQuestion);
     }
 
     public static boolean isEven(int number) {

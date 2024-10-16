@@ -4,18 +4,19 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class GCD {
+    public static final int OPTIONS = 2;
+    public static final int RANDOM_NUMBER_RANGE = 10;
     public static void start() {
         String gameQuestion = "Find the greatest common divisor of given numbers.";
-        String[] correctAnswers = new String[Engine.NUMBERS_OF_QUESTIONS];
-        String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
+        String[][] questionsAnswers = new String[Engine.NUMBERS_OF_QUESTIONS][OPTIONS];
         for (int i = 0; i < Engine.NUMBERS_OF_QUESTIONS; i++) {
-            int firstNum = getRandomNumber();
-            int secondNum = getRandomNumber();
+            int firstNum = getRandomNumber(RANDOM_NUMBER_RANGE);
+            int secondNum = getRandomNumber(RANDOM_NUMBER_RANGE);
             int correctAnswer = getGCD(firstNum, secondNum);
-            question[i] = firstNum + " " + secondNum;
-            correctAnswers[i] = String.valueOf(correctAnswer);
+            questionsAnswers[i][0] = firstNum + " " + secondNum;
+            questionsAnswers[i][1] = String.valueOf(correctAnswer);
         }
-        Engine.engineGame(gameQuestion, correctAnswers, question);
+        Engine.engineGame(questionsAnswers, gameQuestion);
     }
 
     private static int getGCD(int firstNumber, int secondNumber) {

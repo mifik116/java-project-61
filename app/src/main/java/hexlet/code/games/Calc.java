@@ -5,30 +5,31 @@ import java.util.Random;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class Calc {
+    public static final int OPTIONS = 2;
+    public static final int RANDOM_NUMBER_RANGE = 10;
 
     public static void start() {
         String gameQuestion = "What is the result of the expression?";
         String[] typoOfExpression = {" * ", " + ", " - "};
-        String[] correctAnswers = new String[Engine.NUMBERS_OF_QUESTIONS];
-        String[] question = new String[Engine.NUMBERS_OF_QUESTIONS];
-        Random randomExpression = new Random();
+        String[][] questionsAnswers = new String[Engine.NUMBERS_OF_QUESTIONS][OPTIONS];
         for (int i = 0; i < Engine.NUMBERS_OF_QUESTIONS; i++) {
-            String expression = typoOfExpression[randomExpression.nextInt(typoOfExpression.length)];
-            int firstNum = getRandomNumber();
-            int secondNum = getRandomNumber();
+            String expression = typoOfExpression[getRandomNumber((typoOfExpression.length))];
+            int firstNum = getRandomNumber(RANDOM_NUMBER_RANGE);
+            int secondNum = getRandomNumber(RANDOM_NUMBER_RANGE);
             int correctAnswer = resultOfExpression(firstNum, secondNum, expression);
-            question[i] = firstNum + expression + secondNum;
-            correctAnswers[i] = String.valueOf(correctAnswer);
+            String question = firstNum + expression + secondNum;
+            questionsAnswers[i][0] = question;
+            questionsAnswers[i][1] = String.valueOf(correctAnswer);
         }
-        Engine.engineGame(gameQuestion, correctAnswers, question);
+        Engine.engineGame(questionsAnswers, gameQuestion);
     }
+
     private static int resultOfExpression(int firstNumber, int secondNumber, String expression) {
-        if (expression.equals(" * ")) {
-            return firstNumber * secondNumber;
-        } else if (expression.equals(" + ")) {
-            return firstNumber + secondNumber;
-        } else {
-            return firstNumber - secondNumber;
-        }
+        return switch (expression) {
+            case "*" -> firstNumber * secondNumber;
+            case "-" -> firstNumber - secondNumber;
+            case "+" -> firstNumber + secondNumber;
+            default -> throw new Error("Wrong typr of expression");
+        };
     }
 }
