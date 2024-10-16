@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Utils.getRandomNumber;
 
 public class Progression {
     private static final int DEFAULT_ARRAY_LENGTH = 10;
