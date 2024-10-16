@@ -6,7 +6,6 @@ import static hexlet.code.Utils.getRandomNumber;
 public class Calc {
     public static final int OPTIONS = 2;
     public static final int RANDOM_NUMBER_RANGE = 10;
-
     public static void start() {
         String gameQuestion = "What is the result of the expression?";
         String[] typoOfExpression = {" * ", " + ", " - "};
@@ -28,7 +27,7 @@ public class Calc {
             case "*" -> firstNumber * secondNumber;
             case "-" -> firstNumber - secondNumber;
             case "+" -> firstNumber + secondNumber;
-            default -> throw new Error("Wrong typr of expression");
+            default -> throw new IllegalStateException("Unexpected value: " + expression);
         };
     }
 }
